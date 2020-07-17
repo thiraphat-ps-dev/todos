@@ -1,0 +1,133 @@
+h1 {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-size: 54px;
+}
+
+.todo-card {
+  position: absolute;
+  left: 50%;
+  //   top: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  > .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+
+    border: none;
+    background: rgba(0, 0, 0, 0.003);
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+    .fa-chevron-down {
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      color: #e6e6e6;
+      left: 20px;
+    }
+    input {
+      padding: 16px 16px 16px 60px;
+      outline: none;
+      border: none;
+      font-size: 30px;
+      //   width: 400px;
+      min-width: 500px;
+
+      &::placeholder {
+        color: #ebebeb;
+        font-style: italic;
+      }
+    }
+  }
+  > .todo-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    > li {
+      background: rgba(0, 0, 0, 0.003);
+      box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+      font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      > .fa-circle,
+      .fa-check-circle {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      .fa-circle {
+        color: white;
+        border: 1px solid green;
+        border-radius: 50%;
+      }
+      .fa-check-circle {
+        color: white;
+        background-color: green;
+        border-radius: 50%;
+        border: 1px solid green;
+      }
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      //   justify-content: center;
+      p {
+        margin: 15px;
+        // margin-left: 30px;
+        font-size: 28px;
+        font-weight: normal;
+
+        &.active {
+          text-decoration: line-through;
+          color: rgb(179, 185, 190);
+        }
+      }
+      .fa-times {
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        // top: 50%;
+        right: 10px;
+        opacity: 0;
+      }
+      &:hover {
+        .fa-times {
+          transition: all 1s;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  > .footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    span {
+      font-size: 18px;
+      margin: 10px;
+    }
+    .filter {
+      margin: 10px;
+      display: flex;
+      flex-direction: row;
+      a {
+        margin: 0 10px;
+        cursor: pointer;
+
+        border-radius: 5px;
+        padding: 5px ;
+        &.active {
+          border: 1px solid black;
+        }
+      }
+      
+    }
+    .clear{
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+    }
+  }
+}
